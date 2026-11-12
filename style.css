@@ -14,8 +14,8 @@ a { color: inherit; text-decoration: underline; text-decoration-color: var(--lin
 a:hover { text-decoration-color: currentColor; }
 img { display: block; max-width: 100%; }
 /* the studio stays put while the words scroll over it */
-body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--paper) url("studio-wide.jpg") center 62% / cover no-repeat; }
-@media (max-aspect-ratio: 17/20) { body::before { background-image: url("studio-tall.jpg"); } }
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--paper) url("studio-wide.jpg?v=2") center 76% / cover no-repeat; }
+@media (max-aspect-ratio: 17/20) { body::before { background-image: url("studio-tall.jpg?v=2"); } }
 .wrap, .page { max-width: 600px; margin: 0 auto; padding: 0 24px; }
 
 /* ---------- header: the name left, the menu right ---------- */
