@@ -1,0 +1,8 @@
+.claude/
+
+.DS_Store
+# local-only studio page (kept on disk, not published)
+studio-uq6n3mtjpm.*
+# the old 3D home (kept on this computer, not published: its code is Trubot)
+trubot3d.js
+lib/
