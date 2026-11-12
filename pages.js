@@ -57,6 +57,11 @@
     } else {
       h += el("Nothing here yet. It's still inside its box.", "p", "tag");
     }
+    // this app's own support and privacy pages (each app has its own privacy policy: the address given to the App Store)
+    var L = a.links || {}, more = [];
+    if (L.support) more.push('<a href="' + esc(L.support) + '">Support</a>');
+    if (L.privacy) more.push('<a href="' + esc(L.privacy) + '">Privacy Policy</a>');
+    if (more.length) h += '<p class="app-links">' + more.join("") + '</p>';
     page.innerHTML = h;
   }
 })();

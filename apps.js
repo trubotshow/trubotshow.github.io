@@ -17,6 +17,8 @@
    wall (앱을 누르면 Trubot 뒤 LED 벽에 뜨는 그림 — 안 적으면 벽에는 아무것도 안 떠요):
      wall: { image: "apps/사진.jpg" }      사진 한 장
      wall: { video: "apps/영상.mp4" }      영상 (소리 없이 반복 재생)
+   links.privacy: 그 앱만의 개인정보 처리방침 페이지. 앱마다 따로 만들고(예: privacy-eggs.html) 그 주소를 App Store에 등록해요.
+     privacy.html 은 Trudice 것으로 심사에 등록돼 있어서 주소도 내용도 바꾸면 안 돼요.
    placeholder: true 인 것은 자리를 채우려고 넣은 가짜 예시예요. 진짜 앱이 생기면 하나씩 바꿔 주세요.
    ========================================================= */
 window.TRUBOT_APPS = [
