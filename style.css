@@ -1,18 +1,21 @@
 /*! © 2026 Trubotshow. All rights reserved. Trubot™, the Trubot character and Trubotshow™ belong to Trubotshow. Not open source: no license is granted. https://trubotshow.com/rights.html */
-/* Trubotshow — words on paper, the same quiet look as the Trudice and Eggs apps. Light or dark follows the device. */
+/* Trubotshow — words in the white studio (a still render of the old 3D studio, no Trubot, no dots). One light look on every device. */
 :root {
-  --paper: #ede6d9; --ink: #1c1c29; --soft: #6b665e; --line: rgba(28,28,41,.12);
+  --paper: #c9c6c0; --ink: #1c1c29; --soft: #55514b; --line: rgba(28,28,41,.14);
   --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-  color-scheme: light dark;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) { :root { --paper: #363230; --ink: #e2d9ca; --soft: #a39a8e; --line: rgba(226,217,202,.14); } }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; background: var(--paper); color: var(--ink); }
+html { background: var(--paper); }
+body { margin: 0; color: var(--ink); }
 body { font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; word-break: keep-all; }
 a { color: inherit; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
 a:hover { text-decoration-color: currentColor; }
 img { display: block; max-width: 100%; }
+/* the studio stays put while the words scroll over it */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--paper) url("studio-wide.jpg") center 62% / cover no-repeat; }
+@media (max-aspect-ratio: 17/20) { body::before { background-image: url("studio-tall.jpg"); } }
 .wrap, .page { max-width: 600px; margin: 0 auto; padding: 0 24px; }
 
 /* ---------- header: the name left, the menu right ---------- */
