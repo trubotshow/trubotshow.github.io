@@ -91,14 +91,35 @@ window.TRUBOT_APPS = [
   },
 
   {
-    id: "eggs",
-    name: "Eggs",
+    id: "henfocus",
+    name: "Henfocus",
     status: "soon",
     model: "egg",
     color: "#f3ebde",
-    tagline: "Something is about to hatch.",
-    desc: "Still keeping it warm. Coming soon.",
-    links: {}
+    tagline: "Focus for an hour. Collect the eggs.",
+    desc: "A focus clock with a hen on your table. Every six minutes of focus, she lays you an egg.",
+    links: { appStore: null, support: "support.html", privacy: "privacy-henfocus.html" },  /* 출시되면 appStore 에 App Store 주소 */
+    detail: {
+      intro: "A hen lives on your table. Start the clock and focus: every six minutes she lays you an egg, and on the hour, a golden one.",
+      sections: [
+        { title: "Start, pause",
+          body: "Tap anywhere to start an hour of focus. Tap the little clock to pause: night falls and the hen dozes off. Tap play and she wakes up. Leave the app and the clock pauses too." },
+        { title: "Eggs on the clock",
+          body: "A big egg every six minutes, and the tenth, on the hour, is golden. Then five minutes' rest under the night sky, and round again." },
+        { title: "The egg tray",
+          body: "Every egg you collect is kept in a tray calendar: one egg a day, bigger on your busiest days, golden when you made it to the hour." },
+        { title: "The hen",
+          body: "She wanders, pecks, naps and now and then tears about the table. Tap the table and she comes over; a grain of feed may fall, and she'll go for it." },
+        { title: "Small eggs, just for fun",
+          body: "Hold the hen and she lays a small egg. Pick it up and squeeze to crack it, or slide it off the edge. Small eggs don't count." },
+        { title: "Nothing else",
+          body: "No sign-up, no ads, no tracking. The app collects nothing and never goes online. Sound respects your silent switch." }
+      ]
+    },
+    log: [
+      { date: "2026-11-13", title: "Eggs becomes Henfocus",
+        body: "The egg app turned into a focus clock: an hour of focus, ten eggs, a golden one on the hour. Getting ready for App Review." }
+    ]
   },
 
   /* ---- 아래는 예시 자리 (placeholder) ---- */
