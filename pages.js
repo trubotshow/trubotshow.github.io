@@ -43,18 +43,6 @@
     h += '<div class="app-hero">' + thumb(a) + '<div>' + el(status(a), "div", "led") + el(a.name, "h1") + el(a.tagline, "p", "tag") + '</div></div>';
     h += el(d.intro || a.desc, "p", "lead");
     if (a.links && a.links.appStore) h += '<p><a class="mail" href="' + esc(a.links.appStore) + '" target="_blank" rel="noopener">App Store ↗</a></p>';
-    // Mac app handed out from this site (not the App Store): download, then how to open it the first time
-    if (a.links && a.links.mac) {
-      var m = a.mac || {};
-      h += '<p><a class="mail" href="' + esc(a.links.mac) + '" download>Download for Mac ↓</a></p>';
-      h += el([m.version && "Version " + m.version, m.size, m.needs, "Free"].filter(Boolean).join(" · "), "p", "tag");
-      h += '<h2>Opening it the first time</h2><ol class="steps">' + [
-        "Open the downloaded file and double-click " + a.name + ".",
-        "It isn't from the App Store yet, so macOS asks once. If it says it can't check the app, open System Settings → Privacy & Security, scroll down and click Open Anyway. (On macOS 12–14 you can also right-click the app and choose Open.)",
-        a.name + " offers to move itself to Applications. Say yes, allow the camera, sit up straight and press the button.",
-        "Trubot now lives in your menu bar."
-      ].map(function (t) { return el(t, "li"); }).join("") + '</ol>';
-    }
     if (d.sections) {
       h += '<h2>What it does</h2><div class="features">';
       d.sections.forEach(function (s, k) {

@@ -25,14 +25,13 @@ window.TRUBOT_APPS = [
   {
     id: "backoff",
     name: "Back Off",
-    status: "live",
+    status: "soon",
     model: "case", icon: "o",
     color: "#5ef4dc",
     thumb: "apps/backoff.png",
     tagline: "Trubot watches your tech neck.",
     desc: "A tiny Mac app. Lean toward the screen and Trubot pops out of the notch.",
-    links: { mac: "apps/BackOff-1.0.dmg", support: "support.html", privacy: "privacy-backoff.html" },
-    mac: { version: "1.0", size: "1 MB", needs: "macOS 12 Monterey or later · Apple silicon & Intel" },
+    links: { appStore: null, support: "support.html", privacy: "privacy-backoff.html" },  /* 출시되면 appStore 에 Mac App Store 주소 */
     detail: {
       intro: "Your head drifts toward the screen. Trubot notices, pops out of the notch and gives you a look. Sit back and he smiles. (In Korean it's 좀만 뒤로, in Japanese ちょっと下がって.)",
       sections: [
@@ -47,12 +46,12 @@ window.TRUBOT_APPS = [
         { title: "Nothing leaves your Mac",
           body: "A quick look once a minute by default, camera off in between. Each frame is checked on your Mac and thrown away. Nothing is recorded, saved or sent." },
         { title: "Pro",
-          body: "One purchase, kept forever: check as often as every second or always, two extra sensitivity levels, and a posture history for today, 7 and 30 days. Coming with the Mac App Store release." }
+          body: "One in-app purchase, kept forever: check as often as every second or always, two extra sensitivity levels, and a posture history for today, 7 and 30 days." }
       ]
     },
     log: [
       { date: "2026-11-13", title: "Back Off is born",
-        body: "A turtle-neck warning for the Mac, with Trubot living in the notch. English, Korean and Japanese. Getting ready for the Mac App Store." }
+        body: "A turtle-neck warning for the Mac, with Trubot living in the notch. English, Korean and Japanese. Coming soon to the Mac App Store." }
     ]
   },
 
