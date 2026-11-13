@@ -8,6 +8,7 @@
   function status(a) { return a.status === "live" ? LIVE : COMING; }
   // a little picture for each app: the icon if there is one, otherwise a frosted square with its color inside
   function thumb(a) {
+    if (a.thumb) return '<div class="thumb"><img src="' + esc(a.thumb) + '" alt=""></div>';
     if (a.model === "dice") return '<div class="thumb"><img src="apps/trudice.png" alt=""></div>';
     if (a.model === "egg") return '<div class="thumb egg"><svg viewBox="0 0 56 56" aria-hidden="true"><defs><radialGradient id="eggfill" cx="38%" cy="30%" r="80%"><stop offset="0" stop-color="#dba777"/><stop offset="1" stop-color="#96592f"/></radialGradient></defs><path d="M28 8c9 0 16 14.5 16 24S37 48 28 48s-16-6.500-16-16S19 8 28 8z" fill="url(#eggfill)"/></svg></div>';
     return '<div class="thumb frost" style="--c:' + esc(a.color || "#ccc") + '"><i></i></div>';
@@ -42,6 +43,18 @@
     h += '<div class="app-hero">' + thumb(a) + '<div>' + el(status(a), "div", "led") + el(a.name, "h1") + el(a.tagline, "p", "tag") + '</div></div>';
     h += el(d.intro || a.desc, "p", "lead");
     if (a.links && a.links.appStore) h += '<p><a class="mail" href="' + esc(a.links.appStore) + '" target="_blank" rel="noopener">App Store ↗</a></p>';
+    // Mac app handed out from this site (not the App Store): download, then how to open it the first time
+    if (a.links && a.links.mac) {
+      var m = a.mac || {};
+      h += '<p><a class="mail" href="' + esc(a.links.mac) + '" download>Download for Mac ↓</a></p>';
+      h += el([m.version && "Version " + m.version, m.size, m.needs, "Free"].filter(Boolean).join(" · "), "p", "tag");
+      h += '<h2>Opening it the first time</h2><ol class="steps">' + [
+        "Open the downloaded file and double-click " + a.name + ".",
+        "It isn't from the App Store yet, so macOS asks once. If it says it can't check the app, open System Settings → Privacy & Security, scroll down and click Open Anyway. (On macOS 12–14 you can also right-click the app and choose Open.)",
+        a.name + " offers to move itself to Applications. Say yes, allow the camera, sit up straight and press the button.",
+        "Trubot now lives in your menu bar."
+      ].map(function (t) { return el(t, "li"); }).join("") + '</ol>';
+    }
     if (d.sections) {
       h += '<h2>What it does</h2><div class="features">';
       d.sections.forEach(function (s, k) {

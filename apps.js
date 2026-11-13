@@ -23,6 +23,40 @@
    ========================================================= */
 window.TRUBOT_APPS = [
   {
+    id: "backoff",
+    name: "Back Off",
+    status: "live",
+    model: "case", icon: "o",
+    color: "#5ef4dc",
+    thumb: "apps/backoff.png",
+    tagline: "Trubot watches your tech neck.",
+    desc: "A tiny Mac app. Lean toward the screen and Trubot pops out of the notch.",
+    links: { mac: "apps/BackOff-1.0.dmg", support: "support.html", privacy: "privacy-backoff.html" },
+    mac: { version: "1.0", size: "1 MB", needs: "macOS 12 Monterey or later · Apple silicon & Intel" },
+    detail: {
+      intro: "Your head drifts toward the screen. Trubot notices, pops out of the notch and gives you a look. Sit back and he smiles. (In Korean it's 좀만 뒤로, in Japanese ちょっと下がって.)",
+      sections: [
+        { title: "Sit up once",
+          body: "The first time, Trubot walks you through it. Sit the way you should, press one button, and he remembers that you." },
+        { title: "Lean in, he's out",
+          body: "When your head creeps toward the screen and stays there, Trubot grows out of the notch. Stay like that and he keeps growing, and starts to tremble." },
+        { title: "Sit back, get a smile",
+          body: "Fix it and he calms down, smiles, and slips back into the notch. When you sit well, he stays out of your way." },
+        { title: "Not fooled by your chair",
+          body: "He compares your face with your shoulders, so pulling your chair closer isn't a turtle neck. Only your head sneaking forward is." },
+        { title: "Nothing leaves your Mac",
+          body: "A quick look once a minute by default, camera off in between. Each frame is checked on your Mac and thrown away. Nothing is recorded, saved or sent." },
+        { title: "Pro",
+          body: "One purchase, kept forever: check as often as every second or always, two extra sensitivity levels, and a posture history for today, 7 and 30 days. Coming with the Mac App Store release." }
+      ]
+    },
+    log: [
+      { date: "2026-11-13", title: "Back Off is born",
+        body: "A turtle-neck warning for the Mac, with Trubot living in the notch. English, Korean and Japanese. Getting ready for the Mac App Store." }
+    ]
+  },
+
+  {
     id: "trudice",
     name: "Trudice",
     status: "soon",
