@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- © 2026 Trubotshow. All rights reserved. Trubot™ and the Trubot character belong to Trubotshow. -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Truneck 베타 다운로드</title>
+<meta name="description" content="트루봇이 지켜 주는 맥용 거북목 알림 앱, Truneck 베타.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="truneck.png">
+<style>
+  :root {
+    --bg: #ececec; --card: #ffffff; --ink: #1d1d1f; --sub: #6e6e73; --line: #d9d9de;
+    --teal: #2bbfa6; --teal-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #1c1c1e; --card: #2c2c2e; --ink: #f5f5f7; --sub: #a1a1a6; --line: #3a3a3c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 48px 16px 64px; }
+  .hero { text-align: center; }
+  .hero img { width: 140px; height: 140px; }
+  h1 { font-size: 34px; margin: 8px 0 4px; letter-spacing: -0.02em; }
+  .tag { color: var(--sub); margin: 0 0 28px; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; color: var(--teal); border: 1px solid var(--teal);
+    border-radius: 999px; padding: 2px 10px; margin-bottom: 6px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; margin: 16px 0; }
+  .dl { display: flex; flex-direction: column; gap: 12px; }
+  .btn { display: flex; justify-content: space-between; align-items: center; gap: 12px; text-decoration: none;
+    border-radius: 14px; padding: 14px 18px; font-weight: 600; }
+  .btn.main { background: var(--teal); color: var(--teal-ink); }
+  .btn.alt { border: 1px solid var(--line); color: var(--ink); background: none; font: inherit; font-weight: 600; cursor: pointer; text-align: left; }
+  .btn small { font-weight: 400; opacity: .85; }
+  h2 { font-size: 18px; margin: 0 0 10px; }
+  ol, ul { margin: 0; padding-left: 20px; }
+  li { margin: 6px 0; }
+  .muted { color: var(--sub); font-size: 14px; }
+  footer { text-align: center; color: var(--sub); font-size: 13px; margin-top: 32px; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <img src="truneck.png" alt="트루봇">
+    <div class="badge">베타</div>
+    <h1>Truneck</h1>
+    <p class="tag">목이 화면 쪽으로 나오면 트루봇이 노치에서 튀어나와 알려 줘요.</p>
+  </div>
+
+  <div class="card dl">
+    <a class="btn main" href="Truneck-1.0.dmg" download>
+      <span>Truneck 다운로드</span><small>macOS 12 Monterey 이상 · 1 MB · 무료</small>
+    </a>
+    <p class="muted">애플 실리콘과 인텔 맥 모두 돼요. 내 맥 버전은 화면 왼쪽 위  메뉴 → '이 Mac에 관하여'에서 볼 수 있어요.</p>
+  </div>
+
+  <div class="card dl">
+    <h2>테스트용 Pro</h2>
+    <p class="muted" style="margin:0">비밀번호가 있어야 받을 수 있어요. 파일은 암호화돼 있어서, 비밀번호를 넣으면 이 브라우저 안에서 풀려요.</p>
+    <input id="pw" type="password" placeholder="비밀번호" autocomplete="off"
+      style="font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)">
+    <button class="btn alt" data-file="pro-macos13.bin" data-name="Truneck-Pro-1.0.dmg"><span>Pro · macOS 13 Ventura 이상</span><small>1 MB</small></button>
+    <button class="btn alt" data-file="pro-macos12.bin" data-name="Truneck-Pro-1.0-macOS12.dmg"><span>Pro · macOS 12 Monterey</span><small>1 MB</small></button>
+    <p id="msg" class="muted" role="status" style="margin:0"></p>
+  </div>
+
+  <div class="card">
+    <h2>처음 여는 법</h2>
+    <ol>
+      <li>받은 파일을 열고 <b>Truneck</b>을 더블클릭해요.</li>
+      <li>앱스토어 앱이 아니라서 macOS가 한 번 막아요. "확인할 수 없다"는 창이 뜨면 닫고,
+        <b>시스템 설정 → 개인정보 보호 및 보안</b> 아래쪽의 <b>그래도 열기</b>를 눌러요.
+        <span class="muted">(macOS 12~14는 앱을 오른쪽 클릭 → 열기로도 돼요.)</span></li>
+      <li>트루봇이 "설치할까요?" 하고 물어요. <b>설치하고 실행</b>을 눌러요.</li>
+      <li>트루봇의 안내를 따라 카메라를 허용하고, 바르게 앉아 <b>이 자세로 기억하기</b>를 눌러요.</li>
+      <li>이제 메뉴 막대에 트루봇이 살아요. 누르면 감시 주기, 자세 기록 같은 메뉴가 나와요.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>카메라는 이렇게만 써요</h2>
+    <ul>
+      <li>얼굴 크기와 위치만 계산하고 화면은 바로 버려요. <b>녹화·저장·전송을 하지 않아요.</b></li>
+      <li>인터넷에 연결하지 않아요. 계정도 없어요.</li>
+      <li>기본은 1분마다 2초쯤만 카메라를 켜요. 메뉴의 '일시정지'로 언제든 꺼요.</li>
+    </ul>
+  </div>
+
+  <footer>
+    © 2026 Trubotshow · <a href="https://trubotshow.com">trubotshow.com</a> ·
+    <a href="mailto:trubotshow@gmail.com">trubotshow@gmail.com</a><br>
+    Trubot™과 트루봇 캐릭터는 Trubotshow의 것이에요. 친구에게 미리 보여 주는 베타 페이지예요.
+  </footer>
+</main>
+<script>
+// 암호화된 Pro 파일 풀기: salt(16) + nonce(12) + 암호문·tag. 비밀번호 → PBKDF2-SHA256(60만 번) → AES-256-GCM
+// 비밀번호는 이 페이지 어디에도 적혀 있지 않다. 틀리면 풀리지 않을 뿐
+document.querySelectorAll("button[data-file]").forEach(function (b) {
+  b.addEventListener("click", async function () {
+    var msg = document.getElementById("msg"), pw = document.getElementById("pw").value;
+    if (!pw) { msg.textContent = "비밀번호를 넣어 주세요."; return; }
+    msg.textContent = "푸는 중…";
+    try {
+      var buf = new Uint8Array(await (await fetch(b.dataset.file, { cache: "no-store" })).arrayBuffer());
+      var base = await crypto.subtle.importKey("raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+      var key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: buf.slice(0, 16), iterations: 600000, hash: "SHA-256" },
+        base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+      var plain = await crypto.subtle.decrypt({ name: "AES-GCM", iv: buf.slice(16, 28) }, key, buf.slice(28));
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([plain], { type: "application/x-apple-diskimage" }));
+      a.download = b.dataset.name;
+      document.body.appendChild(a); a.click(); a.remove();
+      msg.textContent = "받기 시작했어요: " + b.dataset.name;
+    } catch (e) {
+      msg.textContent = "비밀번호가 맞지 않아요.";
+    }
+  });
+});
+</script>
+</body>
+</html>
