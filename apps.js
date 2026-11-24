@@ -122,6 +122,37 @@ window.TRUBOT_APPS = [
     ]
   },
 
+  {
+    id: "earthtalk",
+    name: "Earthtalk",
+    status: "soon",
+    model: "case",
+    color: "#f2f2f7",
+    thumb: "apps/earthtalk.png",
+    tagline: "Every language, face to face.",
+    desc: "A translator you put between two people. Speak, and your words cross the middle as light, in their language.",
+    links: { appStore: null, support: "support.html", privacy: "privacy-earthtalk.html" },  /* 출시되면 appStore 에 App Store 주소 */
+    detail: {
+      intro: "Put your iPhone on the table between you. Each of you gets half the screen; theirs turns to face them. Speak, and your words cross the middle as glowing dust and arrive in their language. In Korean it's 지구말, in Japanese ちきゅうことば.",
+      sections: [
+        { title: "Face to face",
+          body: "Tap your half and speak, tap again to send. The other half turns upside down to face the person across from you, so you can both read." },
+        { title: "Nine languages, any pair",
+          body: "Korean, English, Japanese, Chinese, Spanish, French, German, Vietnamese and Thai. It opens in your iPhone's language and English." },
+        { title: "Text and photos too",
+          body: "Type in either language and it knows which one you wrote. Point the camera at a sign or a menu and the words are translated right where they stand." },
+        { title: "Offline",
+          body: "Download the languages you need in Settings and translate on a plane, or anywhere without the internet." },
+        { title: "Nothing leaves your iPhone",
+          body: "No sign-up, no ads, no tracking. Apple's Translation does the work on your iPhone; nothing is sent to the developer." }
+      ]
+    },
+    log: [
+      { date: "2026-11-24", title: "Earthtalk is born",
+        body: "A face-to-face translator in nine languages: voice, text and photos. Getting ready for App Review." }
+    ]
+  },
+
   /* ---- 아래는 예시 자리 (placeholder) ---- */
   ph("tiny-diary", "Tiny Diary", "#ffb347", "lines", "One line a day."),
   ph("sleep-robo", "Sleep Robo", "#9b8cff", "moon", "Wind down with a robot."),
