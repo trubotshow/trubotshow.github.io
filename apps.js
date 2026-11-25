@@ -93,12 +93,12 @@ window.TRUBOT_APPS = [
   {
     id: "henfocus",
     name: "Henfocus",
-    status: "soon",
+    status: "live",
     model: "egg",
     color: "#f3ebde",
     tagline: "Focus for an hour. Collect the eggs.",
     desc: "A focus clock with a hen on your table. Every six minutes of focus, she lays you an egg.",
-    links: { appStore: null, support: "support.html", privacy: "privacy-henfocus.html" },  /* 출시되면 appStore 에 App Store 주소 */
+    links: { appStore: "https://apps.apple.com/app/id6833814588", support: "support.html", privacy: "privacy-henfocus.html" },  /* 2026-11-25 출시 */
     detail: {
       intro: "A hen lives on your table. Start the clock and focus: every six minutes she lays you an egg, and on the hour, a golden one.",
       sections: [
