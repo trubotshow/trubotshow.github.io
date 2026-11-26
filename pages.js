@@ -38,6 +38,24 @@
       return;
     }
     document.title = a.name + " — Trubotshow";
+    // for search engines: this app's own description, address and app details (the page is drawn here, so they are set here too)
+    var url = "https://trubotshow.com/app.html?id=" + encodeURIComponent(a.id), desc = a.name + ": " + a.tagline + " " + a.desc;
+    function meta(attr, key, val) {
+      var m = document.head.querySelector("meta[" + attr + '="' + key + '"]');
+      if (!m) { m = document.createElement("meta"); m.setAttribute(attr, key); document.head.appendChild(m); }
+      m.setAttribute("content", val);
+    }
+    meta("name", "description", desc); meta("property", "og:description", desc);
+    meta("property", "og:title", document.title); meta("property", "og:url", url);
+    var can = document.createElement("link"); can.rel = "canonical"; can.href = url; document.head.appendChild(can);
+    if (a.links && a.links.appStore) {
+      var ld = document.createElement("script"); ld.type = "application/ld+json";
+      ld.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: a.name, description: desc, url: url,
+        operatingSystem: a.platform === "Mac" ? "macOS" : "iOS", applicationCategory: "UtilitiesApplication", downloadUrl: a.links.appStore,
+        image: a.thumb ? "https://trubotshow.com/" + a.thumb : undefined,
+        author: { "@type": "Organization", name: "Trubotshow", url: "https://trubotshow.com/" } });
+      document.head.appendChild(ld);
+    }
     var d = a.detail || {}, h = "";
     h += '<a class="back" href="apps.html">← All apps</a>';
     h += '<div class="app-hero">' + thumb(a) + '<div>' + el(status(a), "div", "led") + el(a.name, "h1") + el(a.tagline, "p", "tag") + '</div></div>';
