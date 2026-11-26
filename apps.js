@@ -17,6 +17,8 @@
    wall (앱을 누르면 Trubot 뒤 LED 벽에 뜨는 그림 — 안 적으면 벽에는 아무것도 안 떠요):
      wall: { image: "apps/사진.jpg" }      사진 한 장
      wall: { video: "apps/영상.mp4" }      영상 (소리 없이 반복 재생)
+   shots: ["apps/아이디/1.jpg", …] 앱 페이지에서 옆으로 넘기는 스크린샷 (세로 폰 화면, 폭 560px jpg). 맥처럼 가로 화면이면 wideShots: true
+   platform: "iPhone & iPad" 처럼 앱 페이지의 App Store 버튼 옆에 적는 기기
    links.privacy: 그 앱만의 개인정보 처리방침 페이지. 앱마다 따로 만들고(예: privacy-eggs.html) 그 주소를 App Store에 등록해요.
      privacy.html 은 Trudice 것으로 심사에 등록돼 있어서 주소도 내용도 바꾸면 안 돼요.
    placeholder: true 인 것은 자리를 채우려고 넣은 가짜 예시예요. 진짜 앱이 생기면 하나씩 바꿔 주세요.
@@ -25,68 +27,55 @@ window.TRUBOT_APPS = [
   {
     id: "backoff",
     name: "Back Off",
-    status: "soon",
+    status: "live",
     model: "case", icon: "o",
     color: "#5ef4dc",
     thumb: "apps/backoff.png",
     tagline: "Trubot watches your tech neck.",
     desc: "A tiny Mac app. Lean toward the screen and Trubot pops out of the notch.",
-    links: { appStore: null, support: "support.html", privacy: "privacy-backoff.html" },  /* 출시되면 appStore 에 Mac App Store 주소 */
+    links: { appStore: "https://apps.apple.com/app/id6834271182", support: "support.html", privacy: "privacy-backoff.html" },
+    platform: "Mac",
+    shots: ["apps/backoff/1.jpg", "apps/backoff/2.jpg", "apps/backoff/3.jpg", "apps/backoff/4.jpg", "apps/backoff/5.jpg", "apps/backoff/6.jpg"],
+    wideShots: true,
     detail: {
-      intro: "Your head drifts toward the screen. Trubot notices, pops out of the notch and gives you a look. Sit back and he smiles. (In Korean it's 좀만 뒤로, in Japanese ちょっと下がって.)",
+      intro: "Lean toward the screen and Trubot pops out of the notch to give you a look. Sit back and he smiles.",
       sections: [
-        { title: "Sit up once",
-          body: "The first time, Trubot walks you through it. Sit the way you should, press one button, and he remembers that you." },
-        { title: "Lean in, he's out",
-          body: "When your head creeps toward the screen and stays there, Trubot grows out of the notch. Stay like that and he keeps growing, and starts to tremble." },
-        { title: "Sit back, get a smile",
-          body: "Fix it and he calms down, smiles, and slips back into the notch. When you sit well, he stays out of your way." },
-        { title: "Not fooled by your chair",
-          body: "He compares your face with your shoulders, so pulling your chair closer isn't a turtle neck. Only your head sneaking forward is." },
-        { title: "Nothing leaves your Mac",
-          body: "A quick look once a minute by default, camera off in between. Each frame is checked on your Mac and thrown away. Nothing is recorded, saved or sent." },
-        { title: "Pro",
-          body: "One in-app purchase, kept forever: check as often as every second or always, two extra sensitivity levels, and a posture history for today, 7 and 30 days." }
+        { title: "Lean in, he's out", body: "When your head creeps forward and stays there, Trubot grows out of the notch." },
+        { title: "Sit back, get a smile", body: "Fix your posture and he calms down and slips back in." },
+        { title: "Private", body: "A quick look once a minute. Each frame is checked on your Mac and thrown away. Nothing is saved or sent." },
+        { title: "Pro", body: "One purchase: check more often, finer sensitivity, and your posture history." }
       ]
     },
     log: [
-      { date: "2026-11-13", title: "Back Off is born",
-        body: "A turtle-neck warning for the Mac, with Trubot living in the notch. English, Korean and Japanese. Coming soon to the Mac App Store." }
+      { date: "2026-11-25", title: "On the Mac App Store", body: "Back Off is out, in English, Korean and Japanese." },
+      { date: "2026-11-13", title: "Back Off is born", body: "A turtle-neck warning for the Mac, with Trubot living in the notch." }
     ]
   },
 
   {
     id: "trudice",
     name: "Trudice",
-    status: "soon",
+    status: "live",
     model: "dice",
     color: "#f4f2ee",
     tagline: "Just dice. Seriously.",
     wall: { image: "apps/trudice.png" },      /* 임시: 아이콘. 미리보기 사진·영상이 생기면 바꾸기 */
-    desc: "No buttons. No menus. No ads. Hold, shake, let go. You bring the luck, we bring the dice.",
-    links: { appStore: null, support: "support.html", privacy: "privacy.html" },
+    desc: "No buttons. No menus. No ads. Hold, shake, let go.",
+    links: { appStore: "https://apps.apple.com/app/id6833498409", support: "support.html", privacy: "privacy.html" },
+    platform: "iPhone & iPad",
+    shots: ["apps/trudice/1.jpg", "apps/trudice/2.jpg", "apps/trudice/3.jpg", "apps/trudice/4.jpg"],
     detail: {
       intro: "Open the app. There are dice. That's the whole app.",
       sections: [
-        { title: "Roll",
-          body: "Touch and hold: the dice lift under your finger and rattle. Flick and they fly that way. Just let go and they drop right there. Physics is honest like that." },
-        { title: "More dice, fewer dice",
-          body: "Spread two fingers and one die splits in two. Pinch and two merge into one. One to six. Seven is just greedy." },
-        { title: "Shake",
-          body: "Shake your phone and the dice jump." },
-        { title: "The total",
-          body: "When everything stops, the total floats up in the middle, then fades. Missed it? Two-finger tap." },
-        { title: "Feel",
-          body: "Every hit comes with a haptic tap. Sound respects your silent switch and never stops your music." },
-        { title: "Nothing else",
-          body: "No sign-up, no settings, no ads. The app collects nothing and never goes online." }
+        { title: "Roll", body: "Hold, shake, let go. Flick to throw them that way." },
+        { title: "One to six dice", body: "Spread two fingers to add a die, pinch to take one away." },
+        { title: "The total", body: "When the dice stop, the total floats up in the middle." },
+        { title: "Nothing else", body: "No sign-up, no settings, no ads. It never goes online." }
       ]
     },
     log: [
-      { date: "2026-11-11", title: "Off to App Review",
-        body: "Bold straight-line totals, a how-to that vanishes at a touch, and a loading joke. Sent to Apple." },
-      { date: "2026-11-10", title: "Trudice is born",
-        body: "The minimal dice got an app of their own: no walls, no menus, just a floor and dice." }
+      { date: "2026-11-25", title: "On the App Store", body: "Trudice is out for iPhone and iPad." },
+      { date: "2026-11-10", title: "Trudice is born", body: "The minimal dice got an app of their own: just a floor and dice." }
     ]
   },
 
@@ -98,58 +87,48 @@ window.TRUBOT_APPS = [
     color: "#f3ebde",
     tagline: "Focus for an hour. Collect the eggs.",
     desc: "A focus clock with a hen on your table. Every six minutes of focus, she lays you an egg.",
-    links: { appStore: "https://apps.apple.com/app/id6833814588", support: "support.html", privacy: "privacy-henfocus.html" },  /* 2026-11-25 출시 */
+    links: { appStore: "https://apps.apple.com/app/id6833814588", support: "support.html", privacy: "privacy-henfocus.html" },
+    platform: "iPhone & iPad",
+    shots: ["apps/henfocus/1.jpg", "apps/henfocus/2.jpg", "apps/henfocus/3.jpg", "apps/henfocus/4.jpg", "apps/henfocus/5.jpg"],
     detail: {
-      intro: "A hen lives on your table. Start the clock and focus: every six minutes she lays you an egg, and on the hour, a golden one.",
+      intro: "A hen lives on your table. Focus, and she lays you an egg every six minutes, and a golden one on the hour.",
       sections: [
-        { title: "Start, pause",
-          body: "Tap anywhere to start an hour of focus. Tap the little clock to pause: night falls and the hen dozes off. Tap play and she wakes up. Leave the app and the clock pauses too." },
-        { title: "Eggs on the clock",
-          body: "A big egg every six minutes, and the tenth, on the hour, is golden. Then five minutes' rest under the night sky, and round again." },
-        { title: "The egg tray",
-          body: "Every egg you collect is kept in a tray calendar: one egg a day, bigger on your busiest days, golden when you made it to the hour." },
-        { title: "The hen",
-          body: "She wanders, pecks, naps and now and then tears about the table. Tap the table and she comes over; a grain of feed may fall, and she'll go for it." },
-        { title: "Small eggs, just for fun",
-          body: "Hold the hen and she lays a small egg. Pick it up and squeeze to crack it, or slide it off the edge. Small eggs don't count." },
-        { title: "Nothing else",
-          body: "No sign-up, no ads, no tracking. The app collects nothing and never goes online. Sound respects your silent switch." }
+        { title: "Focus", body: "Tap to start an hour. Tap the little clock to pause, and the hen falls asleep." },
+        { title: "Eggs", body: "An egg every six minutes, a golden one on the hour, then five minutes' rest." },
+        { title: "The egg tray", body: "Every egg you collect goes into a calendar, one day at a time." },
+        { title: "Nothing else", body: "No sign-up, no ads, no tracking. It never goes online." }
       ]
     },
     log: [
-      { date: "2026-11-13", title: "Eggs becomes Henfocus",
-        body: "The egg app turned into a focus clock: an hour of focus, ten eggs, a golden one on the hour. Getting ready for App Review." }
+      { date: "2026-11-25", title: "On the App Store", body: "Henfocus is out for iPhone and iPad, in English, Korean and Japanese." },
+      { date: "2026-11-13", title: "Eggs becomes Henfocus", body: "The egg app turned into a focus clock: an hour of focus, ten eggs, a golden one on the hour." }
     ]
   },
 
   {
     id: "earthtalk",
     name: "Earthtalk",
-    status: "soon",
+    status: "live",
     model: "case",
     color: "#f2f2f7",
     thumb: "apps/earthtalk.png",
     tagline: "Every language, face to face.",
     desc: "A translator you put between two people. Speak, and your words cross the middle as light, in their language.",
-    links: { appStore: null, support: "support.html", privacy: "privacy-earthtalk.html" },  /* 출시되면 appStore 에 App Store 주소 */
+    links: { appStore: "https://apps.apple.com/app/id6838726437", support: "support.html", privacy: "privacy-earthtalk.html" },
+    platform: "iPhone",
+    shots: ["apps/earthtalk/1.jpg", "apps/earthtalk/2.jpg", "apps/earthtalk/3.jpg", "apps/earthtalk/4.jpg", "apps/earthtalk/5.jpg", "apps/earthtalk/6.jpg"],
     detail: {
-      intro: "Put your iPhone on the table between you. Each of you gets half the screen; theirs turns to face them. Speak, and your words cross the middle as glowing dust and arrive in their language. In Korean it's 지구말, in Japanese ちきゅうことば.",
+      intro: "Put your iPhone between you and someone else. Speak, and your words cross the screen in their language.",
       sections: [
-        { title: "Face to face",
-          body: "Tap your half and speak, tap again to send. The other half turns upside down to face the person across from you, so you can both read." },
-        { title: "Nine languages, any pair",
-          body: "Korean, English, Japanese, Chinese, Spanish, French, German, Vietnamese and Thai. It opens in your iPhone's language and English." },
-        { title: "Text and photos too",
-          body: "Type in either language and it knows which one you wrote. Point the camera at a sign or a menu and the words are translated right where they stand." },
-        { title: "Offline",
-          body: "Download the languages you need in Settings and translate on a plane, or anywhere without the internet." },
-        { title: "Nothing leaves your iPhone",
-          body: "No sign-up, no ads, no tracking. Apple's Translation does the work on your iPhone; nothing is sent to the developer." }
+        { title: "Face to face", body: "Each of you gets half the screen, turned to face you." },
+        { title: "Nine languages", body: "Korean, English, Japanese, Chinese, Spanish, French, German, Vietnamese and Thai." },
+        { title: "Text and photos", body: "Type, or point the camera at a sign or a menu." },
+        { title: "Offline and private", body: "Works offline with downloaded languages. Nothing leaves your iPhone." }
       ]
     },
     log: [
-      { date: "2026-11-24", title: "Earthtalk is born",
-        body: "A face-to-face translator in nine languages: voice, text and photos. Getting ready for App Review." }
+      { date: "2026-11-25", title: "On the App Store", body: "Earthtalk is out. In Korean it's 지구말, in Japanese ちきゅうことば." },
+      { date: "2026-11-24", title: "Earthtalk is born", body: "A face-to-face translator in nine languages: voice, text and photos." }
     ]
   },
 

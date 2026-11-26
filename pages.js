@@ -42,7 +42,14 @@
     h += '<a class="back" href="apps.html">← All apps</a>';
     h += '<div class="app-hero">' + thumb(a) + '<div>' + el(status(a), "div", "led") + el(a.name, "h1") + el(a.tagline, "p", "tag") + '</div></div>';
     h += el(d.intro || a.desc, "p", "lead");
-    if (a.links && a.links.appStore) h += '<p><a class="mail" href="' + esc(a.links.appStore) + '" target="_blank" rel="noopener">App Store ↗</a></p>';
+    if (a.links && a.links.appStore) h += '<p class="get"><a class="store-btn" href="' + esc(a.links.appStore) + '" target="_blank" rel="noopener">' +
+      (a.platform === "Mac" ? "Mac App Store" : "App Store") + ' ↗</a>' + (a.platform ? el(a.platform, "span", "tag") : "") + '</p>';
+    // screenshots in a row that slides sideways (swipe, trackpad, or the arrows)
+    if (a.shots && a.shots.length) {
+      h += '<div class="shots-wrap"><div class="shots' + (a.wideShots ? " wide" : "") + '" tabindex="0" aria-label="Screenshots">' +
+        a.shots.map(function (src, k) { return '<img src="' + esc(src) + '" alt="' + esc(a.name) + ' screenshot ' + (k + 1) + '" loading="lazy">'; }).join("") +
+        '</div><button class="shot-nav prev" aria-label="Previous screenshot">‹</button><button class="shot-nav next" aria-label="Next screenshot">›</button></div>';
+    }
     if (d.sections) {
       h += '<h2>What it does</h2><div class="features">';
       d.sections.forEach(function (s, k) {
@@ -64,5 +71,12 @@
     if (L.privacy) more.push('<a href="' + esc(L.privacy) + '">Privacy Policy</a>');
     if (more.length) h += '<p class="app-links">' + more.join("") + '</p>';
     page.innerHTML = h;
+    var strip = page.querySelector(".shots");
+    if (strip) page.querySelectorAll(".shot-nav").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var step = (strip.querySelector("img") || strip).getBoundingClientRect().width + 12;
+        strip.scrollBy({ left: btn.classList.contains("next") ? step : -step, behavior: "smooth" });
+      });
+    });
   }
 })();
