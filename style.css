@@ -1,7 +1,7 @@
 /*! © 2026 Trubotshow. All rights reserved. Trubot™, the Trubot character and Trubotshow™ belong to Trubotshow. Not open source: no license is granted. https://trubotshow.com/rights.html */
-/* Trubotshow — words in Trubot's off-white dome (Truhome's Remotion compositions Web-wide / Web-tall: a 6-second seamless loop at full size; phone framed like the reel stills, PC wider; Trubot left out for now; the still underneath is its first frame; bg.js turns it a little with the mouse or the phone's tilt). One light look on every device. */
+/* Trubotshow — words in Trubot's off-white dome with a light blue tint (Truhome's Remotion compositions Web-wide / Web-tall: a 6-second seamless loop at full size; phone framed like the reel stills, PC wider; Trubot left out for now; the still underneath is its first frame; bg.js turns it a little with the mouse or the phone's tilt). One light look on every device. */
 :root {
-  --paper: #cfccc6; --ink: #1c1c29; --soft: #57534c; --line: rgba(28,28,41,.14);
+  --paper: #bcced4; --ink: #1c1c29; --soft: #4d595d; --line: rgba(28,28,41,.14);
   --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
   color-scheme: light;
 }
@@ -17,8 +17,8 @@ img { display: block; max-width: 100%; }
 /* --m: how far past each side the room reaches, so it can turn (bg.js sets --pan from -1 to 1) */
 :root { --m: 9vw; }
 body::before, video.bg { position: fixed; top: 0; bottom: 0; left: calc(-1 * var(--m)); z-index: -1; pointer-events: none; transform: translateX(calc(var(--pan, 0) * var(--m) * -1)); will-change: transform; }
-body::before { content: ""; right: calc(-1 * var(--m)); background: var(--paper) url("studio-wide.jpg?v=6") center 50% / cover no-repeat; }
-@media (max-aspect-ratio: 17/20) { :root { --m: 12vw; } body::before { background-image: url("studio-tall.jpg?v=6"); } }
+body::before { content: ""; right: calc(-1 * var(--m)); background: var(--paper) url("studio-wide.jpg?v=7") center 50% / cover no-repeat; }
+@media (max-aspect-ratio: 17/20) { :root { --m: 12vw; } body::before { background-image: url("studio-tall.jpg?v=7"); } }
 /* the same room, moving a little: the pattern up top drifts (muted loop over the still) */
 video.bg { width: calc(100vw + 2 * var(--m)); height: 100%; object-fit: cover; object-position: center 50%; }
 @media (prefers-reduced-motion: reduce) { video.bg { display: none; } }
