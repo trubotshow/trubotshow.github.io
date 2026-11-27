@@ -45,11 +45,7 @@ window.TRUBOT_APPS = [
         { title: "Private", body: "A quick look once a minute. Each frame is checked on your Mac and thrown away. Nothing is saved or sent." },
         { title: "Pro", body: "One purchase: check more often, finer sensitivity, and your posture history." }
       ]
-    },
-    log: [
-      { date: "2026-11-25", title: "On the Mac App Store", body: "Back Off is out, in English, Korean and Japanese." },
-      { date: "2026-11-13", title: "Back Off is born", body: "A turtle-neck warning for the Mac, with Trubot living in the notch." }
-    ]
+    }
   },
 
   {
@@ -72,11 +68,7 @@ window.TRUBOT_APPS = [
         { title: "The total", body: "When the dice stop, the total floats up in the middle." },
         { title: "Nothing else", body: "No sign-up, no settings, no ads. It never goes online." }
       ]
-    },
-    log: [
-      { date: "2026-11-25", title: "On the App Store", body: "Trudice is out for iPhone and iPad." },
-      { date: "2026-11-10", title: "Trudice is born", body: "The minimal dice got an app of their own: just a floor and dice." }
-    ]
+    }
   },
 
   {
@@ -98,11 +90,7 @@ window.TRUBOT_APPS = [
         { title: "The egg tray", body: "Every egg you collect goes into a calendar, one day at a time." },
         { title: "Nothing else", body: "No sign-up, no ads, no tracking. It never goes online." }
       ]
-    },
-    log: [
-      { date: "2026-11-25", title: "On the App Store", body: "Henfocus is out for iPhone and iPad, in English, Korean and Japanese." },
-      { date: "2026-11-13", title: "Eggs becomes Henfocus", body: "The egg app turned into a focus clock: an hour of focus, ten eggs, a golden one on the hour." }
-    ]
+    }
   },
 
   {
@@ -125,11 +113,7 @@ window.TRUBOT_APPS = [
         { title: "Text and photos", body: "Type, or point the camera at a sign or a menu." },
         { title: "Offline and private", body: "Works offline with downloaded languages. Nothing leaves your iPhone." }
       ]
-    },
-    log: [
-      { date: "2026-11-25", title: "On the App Store", body: "Earthtalk is out. In Korean it's 지구말, in Japanese ちきゅうことば." },
-      { date: "2026-11-24", title: "Earthtalk is born", body: "A face-to-face translator in nine languages: voice, text and photos." }
-    ]
+    }
   },
 
   /* ---- 아래는 예시 자리 (placeholder) ---- */

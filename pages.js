@@ -75,14 +75,6 @@
       });
       h += '</div>';
     }
-    h += '<h2>Dev log</h2>';
-    if (a.log && a.log.length) {
-      h += '<ol class="log">' + a.log.map(function (e) {
-        return '<li><time>' + esc(e.date) + '</time>' + el(e.title, "h3") + el(e.body, "p") + '</li>';
-      }).join("") + '</ol>';
-    } else {
-      h += el("Nothing here yet. It's still inside its box.", "p", "tag");
-    }
     // this app's own support and privacy pages (each app has its own privacy policy: the address given to the App Store)
     var L = a.links || {}, more = [];
     if (L.support) more.push('<a href="' + esc(L.support) + '">Support</a>');
